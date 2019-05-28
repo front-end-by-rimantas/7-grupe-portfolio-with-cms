@@ -30,6 +30,10 @@
         background-color: #F34236;
         color: #FFF;
     }
+    .btn-grey {
+        background-color: #F3F3F3;
+        color: #333;
+    }
     .about-btn {
         font-size: 15px;
         line-height: 16px;

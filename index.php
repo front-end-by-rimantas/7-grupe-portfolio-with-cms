@@ -193,6 +193,7 @@
 
     <?php
         include 'includes/footer.php';
+        include 'includes/admin-editor.php';
         include 'includes/footer-scripts.php';
     ?>
 </body>

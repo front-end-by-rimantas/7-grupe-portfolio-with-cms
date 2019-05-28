@@ -3,7 +3,7 @@ body div > .container {
 }
 
 i.fa[data-admin="edit-section"] {
-    display: none;
+    display: inline-block;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -21,4 +21,48 @@ i.fa[data-admin="edit-section"] {
     i.fa[data-admin="edit-section"]:hover {
         background-color: rgb(10, 67, 189);
         box-shadow: 0 2px 2px #0007;
+    }
+
+.editor-background {
+    display: none;
+    background: rgba(0,0,0,0.3);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+}
+.admin-editor {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 3;
+    width: 400px;
+    background: #FFF;
+    box-shadow: 8px 0 16px rgba(0,0,0,1);
+}
+    body.show-admin-editor .editor-background,
+    body.show-admin-editor .admin-editor {
+        display: inline-block;
+    }
+    .admin-editor > * {
+        display: inline-block;
+        width: 100%;
+        float: left;
+        padding: 10px 20px;
+    }
+    .admin-editor > header {
+        height: 55px;
+        border-bottom: 1px solid #CCC;
+        line-height: 35px;
+        font-size: 20px;
+    }
+    .admin-editor > section {
+        height: calc(100vh - 110px);
+    }
+    .admin-editor > footer {
+        height: 55px;
     }
