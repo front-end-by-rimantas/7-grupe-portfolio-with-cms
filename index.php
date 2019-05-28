@@ -1,32 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>[Vardenis] portfolio</title>
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/buttons.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/admin.css">
-</head>
+<?php
+    include 'data/data.php';
+    include 'functions/render-services.php';
+?>
+
+
+<?php
+    include 'includes/head.php';
+?>
+
 <body>
-    <!-- header -->
-    <header id="header" class="header-transparent">
-        <div class="container">
-            <a href="#" class = "logo">Martin Luther</a>
-            <i id="hamburger" class="fa fa-bars"></i>
-            <nav class="nav">
-                <a href="#">Home</a>
-                <a href="#about_me">About</a>
-                <a href="#services">Services</a>
-                <a href="#resume">Resume</a>
-                <a href="#portfolio">Our work</a>
-                <a href="#blog">Blog</a>
-                <a href="#contact_me">Contact</a>
-            </nav>
-        </div>
-    </header>
+    <?php include 'includes/header.php'; ?>
 
     <!-- hero -->
     <div id="hero" class="parallax bgr-black">
@@ -74,6 +57,7 @@
                     <h3>Web design</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, molestias!</p>
                 </div> -->
+                <?php echo renderServices( $services ) ?>
             </div>
             <i class="fa fa-pencil" data-admin="edit-section"></i>
         </div>
@@ -207,28 +191,9 @@
         </div>
     </div>
 
-    <!-- footer -->
-    <footer id="footer" class="">
-        <div id="footer_top" class="bg-dark-black">
-            <div class="container">
-                <h4 class="footer-logo">Martin Luther</h4>
-                <div id="social-icons">
-                    <!-- <a href="#" class="fa fa-facebook"></a> -->
-                </div>
-                <i class="fa fa-pencil" data-admin="edit-section"></i>
-            </div>
-        </div>
-        <div id="footer_bottom" class="bg-black">
-            <div class="container">
-                <p>Copy Right &copy; By Martin Luther 2017-18 | All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/data.js"></script>
-    <script src="js/jQuery.js"></script>
-    <script src="js/template-generator.js"></script>
-    <script src="js/function.js"></script>
-    <script src="js/actions.js"></script>
+    <?php
+        include 'includes/footer.php';
+        include 'includes/footer-scripts.php';
+    ?>
 </body>
 </html>

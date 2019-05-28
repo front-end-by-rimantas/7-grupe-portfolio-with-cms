@@ -29,7 +29,7 @@ $('#hamburger').click(function(){
 document.querySelector('.info-box #sociali-icona').innerHTML = generateSocialNetworks(social_stuff);
 
 // SERVICES
-document.querySelector('#services .service-list').innerHTML = generateServices( services );
+// document.querySelector('#services .service-list').innerHTML = generateServices( services );
 
 // RESUME
 
