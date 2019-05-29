@@ -20,7 +20,7 @@
                 <p>WEB DESIGN | DIGITAL MARKETING | UX DESIGN | WEB DEVELOPMENT | MOBILE APPS</p>
                 <div class="btn btn-red btn-big">Let's talk new</div>
             </div>
-            <i class="fa fa-pencil" data-admin="edit-section"></i>
+            <i class="fa fa-pencil" data-admin="edit-section" data-section="hero"></i>
         </div>
     </div>
 
@@ -28,7 +28,7 @@
     <div id="about_me" class="bg-white">
         <div class="container">
             <!-- <div class="cover-pic"> -->
-                <img class="img-box" src="img/about/cover_pic.png" alt="cover_photo">
+                <img class="img-box" src="assets/img/about/cover_pic.png" alt="cover_photo">
             <!-- </div> -->
             <div class="info-box">
                 <h2 class="section-title title-left">About <span>me</span></h2>
@@ -43,7 +43,7 @@
                     <!-- <button class="btn btn-red about-btn btn-shadow">contact me</button>
                     <button class="btn btn-red about-btn btn-shadow">contact me</button> -->
             </div>
-            <i class="fa fa-pencil" data-admin="edit-section"></i>
+            <i class="fa fa-pencil" data-admin="edit-section" data-section="about"></i>
         </div>
     </div>
 
@@ -59,7 +59,7 @@
                 </div> -->
                 <?php echo renderServices( $services ) ?>
             </div>
-            <i class="fa fa-pencil" data-admin="edit-section"></i>
+            <i class="fa fa-pencil" data-admin="edit-section" data-section="services"></i>
         </div>
     </div>
 
@@ -87,7 +87,7 @@
                         <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt aperiam dolore distinctio consequuntur doloribus error illo quibusdam blanditiis dolores, voluptatum similique sint at dicta non.</p>
                     </div>  
                 </div>
-                <i class="fa fa-pencil" data-admin="edit-section"></i>
+                <i class="fa fa-pencil" data-admin="edit-section" data-section="resume"></i>
             </div>
         </div>
     </div>
@@ -99,7 +99,7 @@
             <div class="btn-wrapper">
                 <button class="btn btn-white">hire me now</button>
             </div>
-            <i class="fa fa-pencil" data-admin="edit-section"></i>
+            <i class="fa fa-pencil" data-admin="edit-section" data-section="freelance"></i>
         </div>
     </div>
 
@@ -115,7 +115,7 @@
                 <div class="gallery-list">
                     <script id="portfolio_item_template" type="text/template">
                         <div class="gallery-item">
-                            <img src="img/portfolio/{{photo}}" alt="">
+                            <img src="assets/img/portfolio/{{photo}}" alt="">
                             <div class="black"></div>
                             <div class="texts">
                                 <div class="title">{{title}}</div>
@@ -125,7 +125,7 @@
                     </script>
                 </div>
             </div>
-            <i class="fa fa-pencil" data-admin="edit-section"></i>
+            <i class="fa fa-pencil" data-admin="edit-section" data-section="portfolio"></i>
         </div>
     </div>
 
@@ -139,7 +139,7 @@
                 <div id="go-left" class="fa fa-chevron-left btn"></div>
                 <div id="go-right" class="fa fa-chevron-right btn"></div>
             </div>
-            <i class="fa fa-pencil" data-admin="edit-section"></i>
+            <i class="fa fa-pencil" data-admin="edit-section" data-section="testimonials"></i>
         </div>
     </div>
 
@@ -156,7 +156,7 @@
                     <a href="#" class="btn btn-red">Read more</a>
                 </div> -->
             </div>
-            <i class="fa fa-pencil" data-admin="edit-section"></i>
+            <i class="fa fa-pencil" data-admin="edit-section" data-section="blog"></i>
         </div>
     </div>
 
@@ -187,7 +187,7 @@
                 <p>123 6th St.</p>
                 <p>Melbourne, FL 32904, USA</p>
             </div> -->
-            <i class="fa fa-pencil" data-admin="edit-section"></i>
+            <i class="fa fa-pencil" data-admin="edit-section" data-section="footer"></i>
         </div>
     </div>
 

@@ -60,9 +60,80 @@ i.fa[data-admin="edit-section"] {
         line-height: 35px;
         font-size: 20px;
     }
+        .admin-editor > header > span {
+            line-height: inherit;
+            font-size: inherit;
+        }
+        .admin-editor > header > i {
+            float: right;
+            width: 32px;
+            line-height: 32px;
+            font-size: 18px;
+            text-align: center;
+            background-color: rgb(14, 78, 216);
+            color: #FFF;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+            .admin-editor > header > i:hover {
+                background-color: rgb(10, 67, 189);
+                box-shadow: 0 2px 2px #0007;
+            }
     .admin-editor > section {
         height: calc(100vh - 110px);
     }
+        .admin-editor > section > .list {
+            display: inline-block;
+            width: 100%;
+        }
+            .admin-editor > section > .list > .item {
+                display: inline-block;
+                width: 100%;
+                margin: 8px 0;
+                padding: 10px;
+                border: 1px solid #CCC;
+            }
+                .admin-editor .item > * {
+                    display: inline-block;
+                    float: left;
+                }
+                .admin-editor .item > .fa-check-square {
+                    width: 32px;
+                    line-height: 32px;
+                    font-size: 28px;
+                    text-align: center;
+                    color: #CCC;
+                    cursor: pointer;
+                    margin-right: 10px;
+                }
+                    .admin-editor .item[data-status="active"] > .fa-check-square {
+                        color: #3F3;
+                    }
+                .admin-editor .item > .info {
+                    width: calc(100% - 3 * 32px - 30px);
+                }
+                .admin-editor .item > .fa-trash {
+                    width: 32px;
+                    line-height: 32px;
+                    font-size: 18px;
+                    text-align: center;
+                    background-color: rgb(14, 78, 216);
+                    color: #FFF;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    margin-left: 10px;
+                }
+                .admin-editor .item > .fa-pencil {
+                    width: 32px;
+                    line-height: 32px;
+                    font-size: 18px;
+                    text-align: center;
+                    background-color: rgb(14, 78, 216);
+                    color: #FFF;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    margin-left: 10px;
+                }
     .admin-editor > footer {
         height: 55px;
     }
