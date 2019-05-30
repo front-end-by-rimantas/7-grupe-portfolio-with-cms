@@ -79,9 +79,16 @@ i.fa[data-admin="edit-section"] {
                 background-color: rgb(10, 67, 189);
                 box-shadow: 0 2px 2px #0007;
             }
+            .admin-editor[data-type="inner"] > header > i {
+                display: none;
+            }
     .admin-editor > section {
-        height: calc(100vh - 110px);
+        height: calc(100vh - 150px);
+        overflow-y: auto;
     }
+        .admin-editor[ data-type="list"] > section {
+            height: calc(100vh - 80px);
+        }
         .admin-editor > section > .list {
             display: inline-block;
             width: 100%;
@@ -97,7 +104,7 @@ i.fa[data-admin="edit-section"] {
                     display: inline-block;
                     float: left;
                 }
-                .admin-editor .item > .fa-check-square {
+                .admin-editor .fa-check-square {
                     width: 32px;
                     line-height: 32px;
                     font-size: 28px;
@@ -106,7 +113,7 @@ i.fa[data-admin="edit-section"] {
                     cursor: pointer;
                     margin-right: 10px;
                 }
-                    .admin-editor .item[data-status="active"] > .fa-check-square {
+                    .admin-editor .fa-check-square[data-status="active"] {
                         color: #3F3;
                     }
                 .admin-editor .item > .info {
@@ -148,6 +155,37 @@ i.fa[data-admin="edit-section"] {
                     cursor: pointer;
                     margin-left: 10px;
                 }
-    .admin-editor > footer {
-        height: 55px;
+    .admin-editor .form-row {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 40px;
     }
+        .admin-editor .form-row > label {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .admin-editor .form-row > input {
+            display: inline-block;
+            width: 100%;
+            font-size: 18px;
+            line-height: 22px;
+        }
+        .admin-editor .form-row > textarea {
+            display: inline-block;
+            width: 100%;
+            height: 200px;
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+    .admin-editor > footer {
+        height: 105px;
+        border-top: 1px solid #CCC;
+        background: #FFF;
+    }
+        .admin-editor[ data-type="list"] > footer {
+            display: none;
+        }
