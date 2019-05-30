@@ -91,7 +91,7 @@ function generateTestimonial( data ){
     for ( var i=0; i<data.length; i++ ) {
         HTML += '<div class="item" style="width:'+ 100 / data.length +'%;">\
                     <div class="content">\
-                        <img src="img/testimonials/'+data[i].avatar+'" alt= "'+data[i].name+'">\
+                        <img src="assets/img/testimonials/'+data[i].avatar+'" alt= "'+data[i].name+'">\
                         <p>'+data[i].p+'</p>\
                         <h4>'+data[i].name+'</h4>\
                     </div>\
@@ -164,7 +164,7 @@ function generateBlog( data ) {
         good++;
         
         HTML += '<div class="blog">\
-                    <div class="img" style="background-image:url(img/blog/'+post.photo+');"></div>\
+                    <div class="img" style="background-image:url(assets/img/blog/'+post.photo+');"></div>\
                     <h3>'+post.title+'</h3>\
                     <div class="date">Posted on '+post.date+'</div>\
                     <p>'+post.description+'...</p>\
@@ -216,7 +216,7 @@ function generateRandomBlog( data ) {
         posted.push(position);
         
         HTML += '<div class="blog">\
-                    <div class="img" style="background-image:url(img/blog/'+post.photo+');"></div>\
+                    <div class="img" style="background-image:url(assets/img/blog/'+post.photo+');"></div>\
                     <div class="blog-textarea">\
                         <h3>'+post.title+'</h3>\
                         <div class="date">Posted on '+post.date+'</div>\

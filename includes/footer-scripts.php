@@ -5,3 +5,4 @@
 <script src="assets/js/actions.js"></script>
 
 <script src="assets/js/admin-actions.js"></script>
+<script src="assets/js/admin-functions.js"></script>
