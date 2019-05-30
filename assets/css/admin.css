@@ -40,7 +40,7 @@ i.fa[data-admin="edit-section"] {
     bottom: 0;
     right: 0;
     z-index: 3;
-    width: 400px;
+    width: 500px;
     background: #FFF;
     box-shadow: 8px 0 16px rgba(0,0,0,1);
 }
@@ -112,6 +112,20 @@ i.fa[data-admin="edit-section"] {
                 .admin-editor .item > .info {
                     width: calc(100% - 3 * 32px - 30px);
                 }
+                    .admin-editor .item > .info > .main-info {
+                        display: inline-block;
+                        width: 100%;
+                        font-size: 18px;
+                        line-height: 20px;
+                    }
+                    .admin-editor .item > .info > .secondary-info {
+                        display: inline-block;
+                        width: 100%;
+                        font-size: 14px;
+                        line-height: 20px;
+                        height: 20px;
+                        overflow: hidden;
+                    }
                 .admin-editor .item > .fa-trash {
                     width: 32px;
                     line-height: 32px;

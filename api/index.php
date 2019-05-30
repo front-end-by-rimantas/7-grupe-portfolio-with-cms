@@ -34,7 +34,17 @@ if ( sizeof($_POST) > 0 && gettype($_POST['api']) === 'string' ) {
             // if ( in_array( $user_role, $SYSTEM_ROLES, true ) ) {
             //     $response = $DB->getSectionInfo($_POST['section_name']);
             // }
-            $response = $DB->getSectionInfo($_POST['section_name']);
+            $response = (object)[
+                'success' => 'SUCCESS',
+                'response' => $DB->getSectionInfo($_POST['section_name']),
+                'form' => (object)[
+                    '_order' => ['status', 'icon', 'title', 'description'],
+                    'description' => 'textarea',
+                    'icon' => 'icon-picker',
+                    'status' => 'status-selector',
+                    'title' => 'input'
+                ]
+            ];
             break;
 
         default:

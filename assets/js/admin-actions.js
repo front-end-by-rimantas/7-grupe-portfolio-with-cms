@@ -1,9 +1,11 @@
 "use strict";
 
 $('i.fa[data-admin="edit-section"]').click(function(){
-    var section = $(this).attr('data-section');
+    var section = $(this).attr('data-section'),
+        editor = $('.admin-editor');
     $('body').addClass('show-admin-editor');
-    $('.admin-editor .list').html('loading '+section+'...');
+    editor.attr('data-section', section)
+        .find('.list').html('loading '+section+'...');
     getSectionInfo(section);
 });
 
@@ -22,13 +24,15 @@ $('.admin-editor > section').on('click', '.list .fa-check-square', function(){
 
 $('.admin-editor > header').on('click', '.fa-plus', function(){
     console.log('sukurti nauja elementa');
-    editItem();
+    var section = $('.admin-editor').attr('data-section');
+    editItem( section );
 });
 
 $('.admin-editor > section').on('click', '.list .fa-pencil', function(){
     console.log('redaguojame elementa');
-    var data = {};
-    editItem( data );
+    var index = $(this).parent().index(),
+        section = $('.admin-editor').attr('data-section');
+    editItem( section, index );
 });
 
 $('.admin-editor > section').on('click', '.list .fa-trash', function(){
