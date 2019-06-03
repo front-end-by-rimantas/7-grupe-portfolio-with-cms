@@ -53,15 +53,22 @@ if(!class_exists('MMdb')){
             if ( $new_data['status'] === '1' ) {
                 $status = '1';
             }
-            $data = [
-                'id' => (int)$new_data['index'] + 1,
-                'icon' => $new_data['icon'],
-                'title' => $new_data['title'],
-                'description' => $new_data['description'],
-                'status' => $status
-            ];
-            $sql = "UPDATE ".$section_name." SET icon=:icon, title=:title, description=:description,
-                    status=:status WHERE id=:id";
+            switch ($section_name) {
+                case 'services':
+                    $data = [
+                        'id' => (int)$new_data['index'] + 1,
+                        'icon' => $new_data['icon'],
+                        'title' => $new_data['title'],
+                        'description' => $new_data['description'],
+                        'status' => $status
+                    ];
+                    $sql = "UPDATE ".$section_name." SET icon=:icon, title=:title, description=:description,
+                            status=:status WHERE id=:id";
+                    break;
+                
+                default:
+                    return;
+            }
             $stmt = $this->connect()->prepare($sql);
             $stmt->execute($data);
 
