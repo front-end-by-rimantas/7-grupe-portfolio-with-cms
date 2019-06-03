@@ -21,10 +21,13 @@ function generateServices( data ) {
 
     // konstravimas...
     for ( var i=0; i<data.length; i++ ) {
+        if ( data[i].status !== 1 ) {
+            continue;
+        }
         HTML += '<div class="service">\
                     <i class="fa fa-'+data[i].icon+'"></i>\
                     <h3>'+data[i].title+'</h3>\
-                    <p>'+data[i].p+'</p>\
+                    <p>'+data[i].description+'</p>\
                 </div>';
     }
 

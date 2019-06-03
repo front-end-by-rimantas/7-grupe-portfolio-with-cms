@@ -100,29 +100,202 @@ function renderForm( form, data ) {
 }
 
 function renderFormStatus( title, value=0 ) {
-    return `<div class="form-row">
+    return `<div class="form-row" data-type="checkbox">
                 <label>${title}</label>
                 <i class="fa fa-check-square" ${ value === 1 ? 'data-status="active"' : '' }></i>
             </div>`;
 }
 
 function renderFormIconPicker( title, value ) {
-    return `<div class="form-row">
+    return `<div class="form-row" data-type="icon-picker">
                 <label>${title}</label>
-                <div class="">ICON PICKER</div>
+                <div class="icon-picker">
+                    <div class="value">
+                        <i class="fa fa-${value}"></i>                    
+                    </div>
+                    <input type="text">
+                    <div class="list">
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                        <i class="fa fa-instagram"></i>
+                        <i class="fa fa-twitter"></i>
+                    </div>
+                </div>
             </div>`;
 }
 
 function renderFormInput( title, value='' ) {
-    return `<div class="form-row">
+    return `<div class="form-row" data-type="input">
                 <label>${title}</label>
                 <input type="text" value="${value}">
             </div>`;
 }
 
 function renderFormTextarea( title, value='' ) {
-    return `<div class="form-row">
+    return `<div class="form-row" data-type="textarea">
                 <label>${title}</label>
                 <textarea>${value}</textarea>
             </div>`;
+}
+
+function updateFormElement( section, index ) {
+    var new_data = {},
+        editor = $('.admin-editor'),
+        count = editor.find('.form-row').length,
+        row,
+        keyword = '',
+        value;
+    
+    // add index
+    new_data.index = index;
+
+    for ( var i=0; i<count; i++ ) {
+        row = editor.find('.form-row').eq(i);
+        keyword = row.find('label').text();
+        value = getFormValue( i );
+        new_data[keyword] = value;
+    }
+
+    console.log('siunciami duomenys:');
+    console.log( new_data );
+
+
+    var data = {
+        api: 'section-element-update',
+        section_name : DATA.editingSection,
+        new_data: new_data
+    };
+
+    // requestStart('loading...');
+
+    $.post(API, data, function(callback) {
+        if (callback.success === 'SUCCESS') {
+            DATA[ DATA.editingSection ].response[index] = new_data;
+            renderEditorList( DATA.editingSection, DATA[ DATA.editingSection ].response );
+            editor.attr('data-type', 'list');
+            updateUserInterface( DATA.editingSection );
+            // requestEnd( true, callback.msg );
+        } else {
+            // requestEnd( false, callback.msg );
+        }
+    }, "json");
+
+
+    return;
+}
+
+function getFormValue( rowIndex ) {
+    var rowElement = $('.admin-editor .form-row').eq(rowIndex),
+        value;
+
+    switch ( rowElement.attr('data-type') ) {
+        case 'checkbox':
+            value = 0;
+            if ( rowElement.find('.fa-check-square').attr('data-status') === 'active' ) {
+                value = 1;
+            }
+            break;
+        
+        case 'icon-picker':
+            value = rowElement.find('.icon-picker > .value > i').attr('class').replace('fa fa-', '');
+            break;
+    
+        case 'input':
+            value = rowElement.find('input').val();
+            break;
+    
+        case 'textarea':
+            value = rowElement.find('textarea').val();
+            break;
+    
+        default:
+            break;
+    }
+
+    return value;
+}
+
+function updateUserInterface( section ) {
+    switch ( section ) {
+        case 'services':
+            document.querySelector('#services .service-list').innerHTML = generateServices( DATA[section].response );
+            break;
+    
+        default:
+            break;
+    }
+    return;
 }

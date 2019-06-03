@@ -9,7 +9,7 @@ body * {
 }
 
 .bg-red {
-    background-color: #F34236;
+    background-color: var(--main-color);
 }
 .bg-white {
     background-color: #FFF;
@@ -70,7 +70,7 @@ body * {
     position: relative;
 }
     .section-title > span {
-        color: #F34236;
+        color: var(--main-color);
     }
     .section-title::after {
         display: inline-block;
@@ -116,7 +116,7 @@ body * {
             float: left;
             font-size: 25px;
             line-height: 25px;
-            color: #F34236;
+            color: var(--main-color);
         }
 
         #header nav {
@@ -131,7 +131,7 @@ body * {
             margin-top: -5px;
             line-height: 15px;
             font-size: 20px;
-            background-color: #F34236;
+            background-color: var(--main-color);
             color: #FFF;
             cursor: pointer;
         }
@@ -147,10 +147,10 @@ body * {
                 border-radius: 30px;
             }
                 #header nav > a:hover {
-                    color: #F34236;
+                    color: var(--main-color);
                 }
                 #header nav > a.active {
-                    background-color: #F34236;
+                    background-color: var(--main-color);
                     color: #FFF;
                 }
     
@@ -225,7 +225,7 @@ body * {
                 }
                 /* .Hello > button {
                     margin-top: 25px;
-                    background-color: #F34236;
+                    background-color: var(--main-color);
                     color: #FFF;
                     letter-spacing: 1px;
                     padding-right: 40px;
@@ -267,8 +267,8 @@ body * {
                 margin: 0 0 10px;
             }
             .info-paragraph {
-                font-size: 17px;
-                line-height: 18px;
+                font-size: 1.1rem;
+                line-height: 1.3rem;
                 font-weight: 100;
                 margin: 0 0 10px;
             }
@@ -289,7 +289,7 @@ body * {
                     box-shadow: 0px 1px 5px rgb(116, 111, 111);
                 }
                 #sociali-icona a:hover {
-                    background-color: #F34236;
+                    background-color: var(--main-color);
                 }
 
 /* my services */
@@ -323,7 +323,7 @@ body * {
          }
         .service-list i.fa {
             border-radius: 80px; 
-            background-color: #F34236;
+            background-color: var(--main-color);
             color: #FFF;
             height: 80px;
             width: 80px;
@@ -359,7 +359,7 @@ body * {
     } 
         .resume-box > .h4 {
             font-size: 22px;
-            color: #F34236;
+            color: var(--main-color);
             font-weight: 600;
             text-transform: uppercase;                    
         }
@@ -417,7 +417,7 @@ body * {
         }
             .gallery > .gallery-filter > div:hover,
             .gallery > .gallery-filter > .active {
-                color: #F34236;
+                color: var(--main-color);
             }
     .gallery > .gallery-list {
         display: inline-block;
@@ -767,7 +767,7 @@ body * {
                 margin: 0 5px;
             }
             #footer_top a:hover {
-                background-color: #F34236;
+                background-color: var(--main-color);
             }
     #footer_bottom > .container {
         padding: 25px 0;

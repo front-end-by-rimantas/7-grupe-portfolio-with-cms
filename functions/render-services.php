@@ -8,10 +8,13 @@ function renderServices( $data ) {
     }
 
     for ( $i=0; $i<sizeof($data); $i++ ) {
+        if ( $data[$i]['status'] !== 1 ) {
+            continue;
+        }
         $HTML .= '<div class="service">
-                    <i class="fa fa-'. $data[$i]->icon .'"></i>
-                    <h3>'. $data[$i]->title .'</h3>
-                    <p>'. $data[$i]->p .'</p>
+                    <i class="fa fa-'. $data[$i]['icon'] .'"></i>
+                    <h3>'. $data[$i]['title'] .'</h3>
+                    <p>'. $data[$i]['description'] .'</p>
                 </div>';
     }
 

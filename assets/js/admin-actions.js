@@ -40,6 +40,7 @@ $('.admin-editor > section').on('click', '.list .fa-pencil', function(){
         editor = $('.admin-editor'),
         section = editor.attr('data-section');
     editor.attr('data-type', 'inner');
+    editor.attr('data-index', $(this).parent().index());
     editItem( section, index );
 });
 
@@ -61,5 +62,8 @@ $('.admin-editor > footer .btn[data-action="cancel"]').click(function(){
 
 // updating element from form
 $('.admin-editor > footer .btn[data-action="save"]').click(function(){
-    console.log('save');
+    var editor = $(this).parents('.admin-editor'),
+        section = editor.attr('data-section'),
+        index = parseInt(editor.attr('data-index'));
+    updateFormElement( section, index );
 });
