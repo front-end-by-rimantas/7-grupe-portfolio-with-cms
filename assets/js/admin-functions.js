@@ -29,7 +29,7 @@ function getSectionInfo() {
     $.post(API, data, function(callback) {
         if (callback.success === 'SUCCESS') {
             DATA[ DATA.editingSection ] = callback;
-            renderEditorList( DATA.editingSection, callback.response )
+            renderEditorList( DATA.editingSection, callback.response );
             // requestEnd( true, callback.msg );
         } else {
             // requestEnd( false, callback.msg );

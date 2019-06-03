@@ -26,7 +26,7 @@
         </div>
     </section>
     <footer>
-        <div class="btn btn-grey btn-small btn-shadow">Cancel</div>
-        <div class="btn btn-red btn-small btn-shadow float-right">Save</div>
+        <div data-action="cancel" class="btn btn-grey btn-small btn-shadow">Cancel</div>
+        <div data-action="save" class="btn btn-red btn-small btn-shadow float-right">Save</div>
     </footer>
 </div>

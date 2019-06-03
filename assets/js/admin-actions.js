@@ -16,6 +16,7 @@ $('.editor-background').click(function(){
     $('body').removeClass('show-admin-editor');
 });
 
+// general checkbox
 $('.admin-editor > section').on('click', '.fa-check-square', function(){
     var $item = $(this);
     if ($item.attr('data-status')) {
@@ -25,6 +26,7 @@ $('.admin-editor > section').on('click', '.fa-check-square', function(){
     }
 });
 
+// add new element in list view
 $('.admin-editor > header').on('click', '.fa-plus', function(){
     var editor = $('.admin-editor'),
         section = editor.attr('data-section');
@@ -32,6 +34,7 @@ $('.admin-editor > header').on('click', '.fa-plus', function(){
     editItem( section );
 });
 
+// editing element in list view
 $('.admin-editor > section').on('click', '.list .fa-pencil', function(){
     var index = $(this).parent().index(),
         editor = $('.admin-editor'),
@@ -40,9 +43,23 @@ $('.admin-editor > section').on('click', '.list .fa-pencil', function(){
     editItem( section, index );
 });
 
+// remove elment in list view
 $('.admin-editor > section').on('click', '.list .fa-trash', function(){
     if ( confirm('Ar tikrai nori ištrinti?') ) {
         console.log('istriname elementa');
         $(this).parent().remove();
     }
+});
+
+// cancel editing element from form
+$('.admin-editor > footer .btn[data-action="cancel"]').click(function(){
+    var editor = $(this).parents('.admin-editor'),
+        section = editor.attr('data-section');
+    renderEditorList( section, DATA[section].response );
+    editor.attr('data-type', 'list');
+});
+
+// updating element from form
+$('.admin-editor > footer .btn[data-action="save"]').click(function(){
+    console.log('save');
 });
