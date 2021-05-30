@@ -79,9 +79,16 @@ i.fa[data-admin="edit-section"] {
                 background-color: rgb(10, 67, 189);
                 box-shadow: 0 2px 2px #0007;
             }
+            .admin-editor[data-type="inner"] > header > i {
+                display: none;
+            }
     .admin-editor > section {
-        height: calc(100vh - 110px);
+        height: calc(100vh - 150px);
+        overflow-y: auto;
     }
+        .admin-editor[ data-type="list"] > section {
+            height: calc(100vh - 80px);
+        }
         .admin-editor > section > .list {
             display: inline-block;
             width: 100%;
@@ -97,7 +104,7 @@ i.fa[data-admin="edit-section"] {
                     display: inline-block;
                     float: left;
                 }
-                .admin-editor .item > .fa-check-square {
+                .admin-editor .fa-check-square {
                     width: 32px;
                     line-height: 32px;
                     font-size: 28px;
@@ -106,7 +113,7 @@ i.fa[data-admin="edit-section"] {
                     cursor: pointer;
                     margin-right: 10px;
                 }
-                    .admin-editor .item[data-status="active"] > .fa-check-square {
+                    .admin-editor .fa-check-square[data-status="active"] {
                         color: #3F3;
                     }
                 .admin-editor .item > .info {
@@ -148,6 +155,97 @@ i.fa[data-admin="edit-section"] {
                     cursor: pointer;
                     margin-left: 10px;
                 }
-    .admin-editor > footer {
-        height: 55px;
+    .admin-editor .form-row {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 40px;
     }
+        .admin-editor .form-row > label {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .admin-editor .form-row > input {
+            display: inline-block;
+            width: 100%;
+            font-size: 18px;
+            line-height: 22px;
+        }
+        .admin-editor .form-row > textarea {
+            display: inline-block;
+            width: 100%;
+            height: 200px;
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+    .admin-editor > footer {
+        height: 105px;
+        border-top: 1px solid #CCC;
+        background: #FFF;
+    }
+        .admin-editor[ data-type="list"] > footer {
+            display: none;
+        }
+
+.icon-picker {
+    display: inline-block;
+    width: 100%;
+}
+    .icon-picker > .value {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        border: 1px solid #CCC;
+        border-radius: 4px;
+    }
+        .icon-picker > .value > i {
+            width: 100%;
+            line-height: 60px;
+            text-align: center;
+            font-size: 30px;
+        }
+    .icon-picker > input {
+        display: inline-block;
+        width: calc(100% - 80px);
+        height: 60px;
+        float: right;
+        line-height: 60px;
+        font-size: 30px;
+    }
+    .icon-picker > .list {
+        display: inline-block;
+        width: 100%;
+        margin-top: 10px;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+        .icon-picker > .list > i {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+            float: left;
+            border: 1px solid #CCC;
+            border-radius: 2px;
+            line-height: 40px;
+            text-align: center;
+            font-size: 20px;
+            cursor: pointer;
+        }
+            .icon-picker > .list > i:hover {
+                background-color: #EEE;
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
+                margin: 3px;
+            }
+            .icon-picker > .list > i.active {
+                background-color: var(--main-color);
+                width: 44px;
+                height: 44px;
+                line-height: 44px;
+                margin: 3px;
+            }

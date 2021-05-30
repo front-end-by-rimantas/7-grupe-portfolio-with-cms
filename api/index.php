@@ -47,6 +47,13 @@ if ( sizeof($_POST) > 0 && gettype($_POST['api']) === 'string' ) {
             ];
             break;
 
+        case 'section-element-update':
+            $DB->updateSectionInfo( $_POST['section_name'], $_POST['new_data'] );
+            $response = (object)[
+                'success' => 'SUCCESS'
+            ];
+            break;
+
         default:
             break;
     }

@@ -1,5 +1,5 @@
 <?php
-    include 'data/data.php';
+    include 'db-connect.php';
     include 'functions/render-services.php';
 ?>
 
@@ -57,7 +57,10 @@
                     <h3>Web design</h3>
                     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem, molestias!</p>
                 </div> -->
-                <?php echo renderServices( $services ) ?>
+                <?php 
+                    $services = $DB->getSectionInfo('services');
+                    echo renderServices( $services );
+                ?>
             </div>
             <i class="fa fa-pencil" data-admin="edit-section" data-section="services"></i>
         </div>
